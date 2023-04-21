@@ -13,13 +13,16 @@ export async function getServerSideProps({ req }) {
   
   try {
     const response = await SSR.API.graphql({ query: listPosts, authMode: 'API_KEY' });
+
     return {
+
       props: {
         posts: response.data.listPosts.items,
       },
     };
   } catch (err) {
     console.log(err);
+    
     return {
       props: {},
     };
