@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "starterkit2",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authstarterkit2c9b9d8ae",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
