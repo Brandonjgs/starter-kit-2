@@ -15,6 +15,7 @@ export async function getServerSideProps({ req, params }) {
       id: params.id
     }
   });
+  
   return { 
     props: {
       post: data.getPost
