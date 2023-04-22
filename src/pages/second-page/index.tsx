@@ -8,7 +8,7 @@ import { listPosts } from '../../graphql/queries';
 
 Amplify.configure({ ...awsExports, ssr: true });
 
-export async function getServerSideProps({ req }) {
+export async function getServerSideProps({ req }: any) {
   const SSR = withSSRContext({ req });
   
   try {
@@ -29,13 +29,13 @@ export async function getServerSideProps({ req }) {
   }
 }
 
-async function handleCreatePost(event) {
+async function handleCreatePost(event: any) {
   event.preventDefault();
 
   const form = new FormData(event.target);
 
   try {
-    const { data } = await API.graphql({
+    const { data }: any = await API.graphql({
       authMode: 'AMAZON_COGNITO_USER_POOLS',
       query: createPost,
       variables: {
@@ -47,7 +47,7 @@ async function handleCreatePost(event) {
     });
 
     window.location.href = `/posts/${data.createPost.id}`;
-  } catch ({ errors }) {
+  } catch ({ errors }: any) {
     console.error(...errors);
     throw new Error(errors[0].message);
   }

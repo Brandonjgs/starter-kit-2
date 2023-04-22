@@ -7,7 +7,7 @@ import { getPost } from '../../graphql/queries';
 
 Amplify.configure({ ...awsExports, ssr: true });
 
-export async function getServerSideProps({ req, params }) {
+export async function getServerSideProps({ req, params }: any) {
   const SSR = withSSRContext({ req });
   const { data } = await SSR.API.graphql({
     query: getPost,
@@ -27,6 +27,7 @@ export default function Post({ post }) {
   const router = useRouter();
 
   if (router.isFallback) {
+    
     return (
       <div>
         <h1 >Loading&hellip;</h1>
