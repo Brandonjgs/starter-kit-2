@@ -1,7 +1,7 @@
 import { Amplify, API, withSSRContext } from 'aws-amplify';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import awsExports from '../../aws-exports.js';
+import awsExports from '../../aws-exports';
 import { deletePost } from '../../graphql/mutations';
 import { getPost } from '../../graphql/queries';
 
