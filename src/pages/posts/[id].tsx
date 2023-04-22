@@ -47,7 +47,7 @@ export default function Post({ post }: any) {
 
       window.location.href = '/';
     } catch ({ errors }: any) {
-      console.error(...errors);
+      console.error([...errors]);
       throw new Error(errors[0].message);
     }
   }
