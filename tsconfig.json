@@ -10,6 +10,7 @@
       "es5", 
       "es6"
     ],
+    "useUnknownInCatchVariables": false,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
