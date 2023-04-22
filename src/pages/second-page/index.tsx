@@ -2,9 +2,9 @@
 import { Authenticator } from '@aws-amplify/ui-react';
 import { Amplify, API, Auth, withSSRContext } from 'aws-amplify';
 import Head from 'next/head';
-import awsExports from './../../aws-exports';
-import { createPost } from './../../graphql/mutations';
-import { listPosts } from './../../graphql/queries';
+import awsExports from '../../aws-exports';
+import { createPost } from '../../graphql/mutations';
+import { listPosts } from '../../graphql/queries';
 
 Amplify.configure({ ...awsExports, ssr: true });
 
@@ -22,7 +22,7 @@ export async function getServerSideProps({ req }) {
     };
   } catch (err) {
     console.log(err);
-    
+
     return {
       props: {},
     };

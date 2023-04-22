@@ -1,9 +1,9 @@
 import { Amplify, API, withSSRContext } from 'aws-amplify';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import awsExports from './../../aws-exports';
-import { deletePost } from './../../graphql/mutations';
-import { getPost } from './../../graphql/queries';
+import awsExports from '../../aws-exports';
+import { deletePost } from '../../graphql/mutations';
+import { getPost } from '../../graphql/queries';
 
 Amplify.configure({ ...awsExports, ssr: true });
 
@@ -15,7 +15,7 @@ export async function getServerSideProps({ req, params }) {
       id: params.id
     }
   });
-  
+
   return { 
     props: {
       post: data.getPost
