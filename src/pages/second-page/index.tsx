@@ -53,7 +53,7 @@ async function handleCreatePost(event: any) {
   }
 }
 
-export default function Home({ posts = [] }) {
+export default function Home({ posts = [] }: any) {
   return (
     <div >
       <Head>
@@ -70,7 +70,7 @@ export default function Home({ posts = [] }) {
         </p>
 
         <div >
-          {posts.map((post) => (
+          {posts.map((post: any) => (
             <a  href={`/posts/${post.id}`} key={post.id}>
               <h3>{post.title}</h3>
               <p>{post.content}</p>

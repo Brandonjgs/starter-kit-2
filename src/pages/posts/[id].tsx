@@ -23,7 +23,7 @@ export async function getServerSideProps({ req, params }: any) {
   };
 }
 
-export default function Post({ post }) {
+export default function Post({ post }: any) {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -46,7 +46,7 @@ export default function Post({ post }) {
       });
 
       window.location.href = '/';
-    } catch ({ errors }) {
+    } catch ({ errors }: any) {
       console.error(...errors);
       throw new Error(errors[0].message);
     }
